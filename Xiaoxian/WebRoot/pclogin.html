@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>扫码登录</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+		*{
+            margin: 0px;
+            padding: 0px;
+            font-size: 45px ;
+        }       
+        #syy{
+            margin:10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        #for{
+            background-color: #eeeeee;
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            line-height: 90px;
+            padding:25px 0px;
+        }
+
+        #pcpic{
+            background-color:#eeeeee ;
+        }
+        #sub{
+            border: none;
+           	display: block;
+            width: 95%;
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            margin: 30px auto;
+            height: 90px;
+        }
+</style>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+  </head>
+  
+  <body  style="background-color: #333333">
+    <div id="pcpic">
+        <img src="images/phoneView1.png" height="100%" width="100%"/>
+    </div><div id="for">
+        <ul>
+            <li>小鲜登录确认</li>
+            <li>请不要扫描来源不明的二维码</li>
+            <li><input type="button" onclick="login()" id="sub" value="确认登录"></li>
+            <li>取消</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+			url:"/Xiaoxian/uuidIsSaoMa",
+			data:"uuid="+ $.getUrlParam('uuid'),
+			success:function(data){
+			}
+				
+			})
+		})
+	//登录
+	function login(){
+		$.post("/Xiaoxian/PhoneLoginServlet", {
+			uuid : $.getUrlParam('uuid'),	
+			userid:1,		
+			uname:"admin",
+			upwd:"admin"
+			
+			/* uname:$("#login_name").val(),
+			upwd:$("#login_psw").val() */
+		}, function(data, status) {
+			if(data == ""){
+				alert("登录失败");
+			}else{
+				alert("登录成功");
+			}
+		});
+	}
+	
+	//获取网页参数	获取uuid的唯一标识值
+	(function($){
+		$.getUrlParam = function(name){
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r!=null) return unescape(r[2]); return null;
+		}
+		})(jQuery);
+</script>
+  </body>
+</html>

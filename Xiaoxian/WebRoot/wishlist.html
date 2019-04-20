@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Favicons Icon -->
+<title>小鲜超市</title>
+<!-- Mobile Specific -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
+<link rel="stylesheet" type="text/css" href="css/revslider.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Google Fonts -->
+<link href="css/ac2ae5775c664fb682a6b10e460efad2.css" rel="stylesheet">
+<link rel="icon" href="images/logoa3.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logoa3.png" type="image/x-icon" />
+
+</head>
+<body class="wishlist-page">
+	<div id="page">
+		<!-- Header -->
+		<header>
+			<div class="header-container"></div>
+		</header>
+		<div class="main-container col2-right-layout">
+			<div class="main container">
+				<div class="row">
+					<section class="col-sm-9 col-xs-12" style="width:100%">
+						<div class="col-main">
+							<div class="my-account">
+								<div class="page-title">
+									<h2>我的愿望清单</h2>
+								</div>
+								<div class="my-wishlist">
+									<div class="table-responsive">
+										<form method="post" action="#" id="wishlist-view-form">
+											<fieldset>
+												<table id="wishlist-table"
+													class="clean-table linearize-table data-table">
+													<thead>
+														<tr class="first last">
+															<th class="customer-wishlist-item-image">商品</th>
+															<th class="customer-wishlist-item-info">名称</th>
+															<th class="customer-wishlist-item-quantity">数量</th>
+															<th class="customer-wishlist-item-price">价钱</th>
+															<th class="customer-wishlist-item-cart">加入购物车</th>
+															<th class="customer-wishlist-item-remove">删除</th>
+														</tr>
+													</thead>
+													<tbody>
+
+													</tbody>
+												</table>
+												<div class="buttons-set buttons-set2">
+													<p class="back-link">														
+													</p>
+													<button class="button btn-share" title="Share Wishlist"
+														name="save_and_share" type="submit">
+														<span>更新心愿单</span>
+													</button>
+													<button class="button btn-add"
+														onclick="addAllWItemsToCart()" title="Add All to Cart"
+														type="button">
+														<span>全部添加到购物车</span>
+													</button>
+													<button class="button btn-update" title="Update Wishlist"
+														name="do" type="submit">
+														<span>分享心愿单</span>
+													</button>
+												</div>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<!-- Brand Logo Section -->
+		<div class="brand-logo">
+			<div class="container">
+				<div class="slider-items-products">
+					<div id="brand-logo-slider"
+						class="product-flexslider hidden-buttons">
+						<div class="slider-items slider-width-col6">
+							<div class="item">
+								<a href="#"><img src="picture/b-logo3.png" alt="Brand Logo"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo1.png" alt="Brand Logo1"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo2"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo3"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo5.png" alt="Brand Logo4"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo6.png" alt="Brand Logo5"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo6"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo7"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Brand Logo Section -->
+		<!-- Footer -->
+		<footer>
+			<div class="footer-page"></div>
+		</footer>
+		<!-- End Footer -->
+	</div>
+	<!-- End page -->
+	<!-- mobile menu -->
+	
+	<!-- JavaScript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.mobile-menu.min.js"></script>
+	<script src="js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+					
+			$(".header-container").load("header.html");
+			$(".footer-page").load("footer.html");						
+		
+			var allPro;
+			$.post("GetAllProServlet", getPro, "json");
+			function getPro(data1) {
+				allPro = data1;
+				$.post("CheckColl", "pr=check", checkColl, "json");
+			}
+			//删除商品
+			$('body').on('click', '.remove-item', function() {
+				var pid = $(this).parent().parent().find("#name").attr("pro");
+				$.post("CheckColl", "pr=remove&pid=" + pid, removeColl, "text");
+	
+			})
+			//失去焦点时商品修改数量
+			$('body').on('blur', '.qty', function() {
+				var pid = $(this).parent().parent().parent().parent().find("#name").attr("pro");
+				$.post("CheckColl", "pr=update&num=" + $(this).val() + "&pid=" + pid, updateColl, "text");
+			})
+			
+			//修改数量成功执行的函数
+			function updateColl(data) {
+				
+			}
+			//删除事件调用的函数
+			function removeColl(data) {
+				$.post("CheckColl", "pr=check", checkColl, "json");				
+			}
+			//读取心愿单信息
+			function checkColl(data) {
+				$("#wishlist-table>thead>tr:eq(0)").siblings().remove();
+				var price;
+				var name;
+				var imgUrl;
+				for (var a = 0; a < data.length; a++) {
+					for (var i = 0; i < allPro.length; i++) {
+						if (data[a].pid == allPro[i].id) {
+							price = allPro[i].promotePrice;
+							name = allPro[i].name;
+							imgUrl = allPro[i].imgUrl;
+							break;
+						}
+					}
+					$("#wishlist-table>thead").append("<tr class='first odd'><td class='wishlist-cell0 customer-wishlist-item-image'><atitle='' 	class='product-image'><img width='150'alt='" + name + "' src='products-images/" + imgUrl + "'></a></td><td class='wishlist-cell1 customer-wishlist-item-info'><h3 class='product-name'><a title='" + name + "'pro=" + data[a].pid + " id='name'>" + name + "</a></h3></td><td data-rwd-label='Quantity' class='wishlist-cell2 customer-wishlist-item-quantity'><div class='cart-cell'><div class='add-to-cart-alt'><input type='text' value='" + data[a].number + "' name='qty[31]' class='input-text qty validate-not-negative-number' pattern='\d*'></div></div></td><td data-rwd-label='Price' class='wishlist-cell3 customer-wishlist-item-price'><div class='cart-cell'><div class='price-box'><span class='regular-price'><span class='price'>" + price + "</span></span></div></div></td><td class='wishlist-cell4 customer-wishlist-item-cart'><div class='cart-cell'><button class='button btn-cart click_cart'  title='Add to Cart' type='button'><input type='hidden' value='"+data[a].pid+"'><span><span>加入购物车</span></span></button></div><p><a href='#/' class=''>编辑</a></p></td><td class='wishlist-cell5 customer-wishlist-item-remove last'><a class='remove-item' title='Clear Cart'><span><span></span></span></a></td></tr>");
+				}
+			}
+		})
+	</script>
+</body>
+</html>

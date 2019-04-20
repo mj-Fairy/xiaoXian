@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>Xiaoxian</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>长连接检查登录状态</display-name>
+    <servlet-name>LongConnectionCheckServlet</servlet-name>
+    <servlet-class>cn.kuwo.LongConnectionCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LongConnectionCheckServlet</servlet-name>
+    <url-pattern>/LongConnectionCheckServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>获取二维码图片以及uuid</description>
+    <display-name>GetQrCodeServlet</display-name>
+    <servlet-name>GetQrCodeServlet</servlet-name>
+    <servlet-class>cn.kuwo.GetQrCodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetQrCodeServlet</servlet-name>
+    <url-pattern>/GetQrCodeServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description>手机扫描二维码之后进行登录</description>
+    <display-name>PhoneLoginServlet</display-name>
+    <servlet-name>PhoneLoginServlet</servlet-name>
+    <servlet-class>cn.kuwo.PhoneLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PhoneLoginServlet</servlet-name>
+    <url-pattern>/PhoneLoginServlet</url-pattern>
+  </servlet-mapping>  
+  
+  <servlet>   
+    <servlet-name>uuidIsSaoMa</servlet-name>
+    <servlet-class>cn.kuwo.uuidIsSaoMa</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>uuidIsSaoMa</servlet-name>
+    <url-pattern>/uuidIsSaoMa</url-pattern>
+  </servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.UserLoginServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <url-pattern>/UserLoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+		<servlet-name>ProductServlet</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.ProductServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/ProductServlet</url-pattern>
+  </servlet-mapping>
+
+      <servlet>
+		<servlet-name>GetIndexProductServlet</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.GetIndexProductServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>GetIndexProductServlet</servlet-name>
+    <url-pattern>/GetIndexProductServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+      <servlet>
+		<servlet-name>ShoppingCarServlet</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.ShoppingCarServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>ShoppingCarServlet</servlet-name>
+    <url-pattern>/ShoppingCarServlet</url-pattern>
+  </servlet-mapping>
+  
+    
+      <servlet>
+		<servlet-name>ShopUpdeleDelServlet</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.ShopUpdeleDelServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>ShopUpdeleDelServlet</servlet-name>
+    <url-pattern>/ShopUpdeleDelServlet</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+		<servlet-name>ProductJieSuanServlet</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.ProductJieSuanServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>ProductJieSuanServlet</servlet-name>
+    <url-pattern>/ProductJieSuanServlet</url-pattern>
+  </servlet-mapping>
+  
+          <servlet>
+		<servlet-name>IsUserLogin</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.IsUserLogin</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>IsUserLogin</servlet-name>
+    <url-pattern>/IsUserLogin</url-pattern>
+  </servlet-mapping>
+  
+  
+            <servlet>
+		<servlet-name>DingDanServlet</servlet-name>
+		<servlet-class>cn.Xiaoxian.servlet.DingDanServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+    <servlet-name>DingDanServlet</servlet-name>
+    <url-pattern>/DingDanServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>

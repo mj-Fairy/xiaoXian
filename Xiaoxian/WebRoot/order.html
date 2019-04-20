@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<style>
+.main {
+	width: 960px;
+	margin: 50px 170px;
+}
+</style>
+<!-- Favicons Icon -->
+<title>小鲜超市</title>
+<!-- Mobile Specific -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
+<link rel="stylesheet" type="text/css" href="css/revslider.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="style/cssreset-min.css">
+<link rel="stylesheet" type="text/css" href="style/common.css">
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="icon" href="images/logoa3.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logoa3.png" type="image/x-icon" />
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<style type="text/css">
+.citys p {
+	line-height: 28px;
+	padding-left: 70px;
+}
+
+.warning {
+	color: #c00;
+}
+
+.main {
+	width: 1100px;
+}
+
+.main a {
+	margin-right: 8px;
+}
+</style>
+</head>
+<body class="shopping-cart-page">
+	<div id="page">
+		<!-- Header -->
+		<header>
+			<div class="header-container"></div>
+		</header>
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<ul>
+							<li class="home"><a title="Go to Home Page"
+								href="index.html">主页</a><span>/</span></li>
+							<li class="category1601"><strong>购物车结算</strong></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- main-container -->
+		<div class="main-container col2-right-layout">
+			<div class="main container">
+				<div class="row">
+					<h3 class="common_title">确认收货地址</h3>
+
+					<div class="common_list_con clearfix">
+						<dl>
+							<dt>寄送到：</dt>
+							<dd class="dizhi">
+								<input type="radio" aid="" name="" checked="">北京市 海淀区
+								东北旺西路8号中关村软件园 （李思 收） 182****7528
+							</dd>
+						</dl>
+						<a href=javascript:void(0) class="edit_site">编辑收货地址</a>
+
+					</div>
+
+					<h3 class="common_title">支付方式</h3>
+					<div class="common_list_con clearfix">
+						<div class="pay_style_con clearfix">
+							<input type="radio" name="pay_style" checked> <label
+								class="cash"></label> <input type="radio" name="pay_style">
+							<label class="weixin"></label> <input type="radio"
+								name="pay_style" checked="checked"> <label
+								class="zhifubao"></label> <input type="radio" name="pay_style">
+							<label class="bank"></label>
+						</div>
+					</div>
+
+					<h3 class="common_title">商品列表</h3>
+
+					<div class="common_list_con clearfix shopInfo">
+						<ul class="goods_list_th clearfix">
+							<li class="col01">商品名称</li>
+							<li class="col02">商品单位</li>
+							<li class="col03">商品价格</li>
+							<li class="col04">数量</li>
+							<li class="col05">小计</li>
+						</ul>
+						<!-- <ul class="goods_list_td clearfix">
+							<li class="col01">1</li>
+							<li class="col02"><img src="images/goods/goods012.jpg"></li>
+							<li class="col03">奇异果</li>
+							<li class="col04">500g</li>
+							<li class="col05">25.80元</li>
+							<li class="col06">1</li>
+							<li class="col07">25.80元</li>
+						</ul>
+						<ul class="goods_list_td clearfix">
+							<li class="col01">2</li>
+							<li class="col02"><img src="images/goods/goods003.jpg"></li>
+							<li class="col03">大兴大棚草莓</li>
+							<li class="col04">500g</li>
+							<li class="col05">16.80元</li>
+							<li class="col06">1</li>
+							<li class="col07">16.80元</li>
+						</ul> -->
+					</div>
+
+					<h3 class="common_title">总金额结算</h3>
+
+					<div class="common_list_con clearfix">
+						<div class="settle_con">
+							<div class="total_goods_count">
+								共<em>2</em>件商品，总金额<b>42.60元</b> <input type="hidden"
+									name="WIDTQtrade_no" value="" />
+							</div>
+							<div class="transit">
+								运费：<b>10元</b>
+							</div>
+							<div class="total_pay">
+								实付款：<b>52.60元</b>
+							</div>
+						</div>
+					</div>
+
+					<div class="order_submit clearfix">
+						<a href=javascript:void(0) id="order_btn">提交订单</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End main-container -->
+		<!-- Brand Logo Section -->
+		<div class="brand-logo">
+			<div class="container">
+				<div class="slider-items-products">
+					<div id="brand-logo-slider"
+						class="product-flexslider hidden-buttons">
+						<div class="slider-items slider-width-col6">
+							<div class="item">
+								<a href="#"><img src="picture/b-logo3.png" alt="Brand Logo"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo1.png" alt="Brand Logo1"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo2"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo3"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo5.png" alt="Brand Logo4"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo6.png" alt="Brand Logo5"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo6"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo7"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Brand Logo Section -->
+		<!-- Footer -->
+		<footer>
+			<div class="footer-page"></div>
+		</footer>
+		<!-- End Footer -->
+	</div>
+	<!-- End page -->
+	<!-- mobile menu -->
+
+	<div class="shade" style=""></div>
+
+	<div class="shade_content" style="">
+		<div class="col-xs-12 shade_colse">
+			<button onclick="javascript:onclick_close();">x</button>
+		</div>
+		<div class="nav shade_content_div">
+			<div class="col-xs-12 shade_title">新增收货地址</div>
+			<div class="col-xs-12 shade_from">
+				<form action="DingDanServlet?cz=adddizhi" method="post">
+					<div class="col-xs-12">
+
+						<div id="demo3" class="citys">
+							<span class="span_style" id="add"
+								style="float: left;position: absolute;left: 140px">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区</span>
+							<p>
+								<select name="province">
+								</select> <select name="city">
+								</select> <select name="area">
+								</select>
+							</p>
+						</div>
+						<script type="text/javascript">
+							$.post("CheckAreat", "parent_id=0", getProvince, "json");
+							function getProvince(data) {
+								$("select[name='province']>option").remove();
+								$("select[name='area']>option").remove();
+								for (var i = 0; i < data.length; i++) {
+									$("select[name='province']").append("<option value = '" + data[i].id + "'>" + data[i].name + "</option>");
+								}
+								$.post("CheckAreat", "parent_id=" + $("select[name='province']").val(), getCity, "json");
+							}
+							$("select[name='province']").change(function() {
+								$.post("CheckAreat", "parent_id=" + $("select[name='province']").val(), getCity, "json");
+							})
+							function getCity(data) {
+								$("select[name='city']>option").remove();
+								for (var i = 0; i < data.length; i++) {
+									$("select[name='city']").append("<option value = '" + data[i].id + "'>" + data[i].name + "</option>");
+								}
+								$.post("CheckAreat", "parent_id=" + $("select[name='city']").val(), getArea, "json");
+							}
+							$("select[name='city']").change(function() {
+								$.post("CheckAreat", "parent_id=" + $("select[name='city']").val(), getArea, "json");
+							})
+							function getArea(data) {
+								$("select[name='area']>option").remove();
+								for (var i = 0; i < data.length; i++) {
+									$("select[name='area']").append("<option value = '" + data[i].id + "'>" + data[i].name + "</option>");
+								}
+							}
+							//导入头部尾部以及控制层的显示与隐藏
+							$(".header-container").load("header.html");
+							$(".footer-page").load("footer.html");
+							$(".shade_content").hide();
+							$(".shade").hide();
+							$(".edit_site").click(function() {
+								$(".shade_content").show();
+								$(".shade").show();
+							})
+						
+							//读取路径信息获得提交的商品id集合，
+							var proids = new Array();
+							var str = location.href; //取得整个地址栏
+							var num = str.indexOf("=")
+							str = str.substr(num + 1);
+							var arr = str.split(",")
+							var money = 0; //总金额	
+							var aaids="";								
+							//将商品id与用户id对应的购物车信息删除
+							//将信息插入到订单表		
+							getPro();								
+							function getPro(){
+								for (var i = 0; i < arr.length; i++) {
+									if ((arr.length - 2) >= i) {									
+											aaids+= "&ids="+arr[i];	
+											proids[i]=arr[i];																											
+									}	
+								}			
+								//删除购物车表信息，订单表添加信息
+								$.post("DingDanServlet", "cz=getProduct&ids=" + aaids, function(data) {
+									if (parseInt(data) > 0) {
+										getOrd();
+									} else {
+										alert("执行失败");
+									}
+									})		
+																																	
+							}							
+							function getOrd() {
+								//读取订单信息显示							
+								$.post("DingDanServlet", "cz=getOrder", function(data) {								
+									var str = "";
+									var yunfei = 10;
+									var len = data.length;
+									$(".shopInfo ul:not(:eq(0))").remove();
+									//用户待支付订单集合
+									for (var i = 0; i < data.length; i++) {
+										//只显示用户从购物车过来的订单则需要判断
+										for (var k = 0; k < proids.length; k++) {
+											if (data[i].proid == proids[k]) {
+												str += "<ul class='goods_list_td clearfix' orderCode='" + data[i].orderCode + "'><li class='col01'>1</li><li class='col02'><img src='products-images/" + data[i].imgUrl + "'></li><li class='col03'>" + data[i].name + "</li><li class='col04'>500g</li><li class='col05'>" + data[i].promotePrice + "元</li><li class='col06'>" + data[i].num + "</li><li class='col07'>" + (data[i].num * data[i].promotePrice).toFixed(2) + "元</li></ul>";
+												money = money + (parseInt(data[i].num) * parseInt(data[i].promotePrice).toFixed(2));
+											}
+										}
+									}
+									$(".shopInfo").append(str);
+									$(".total_goods_count em").text(len);
+									$(".total_goods_count b").text(money.toFixed(2) + "元");
+									$(".total_pay b").text((money + yunfei).toFixed(2) + "元");
+									$(".total_goods_count").val(money);
+									$(".total_goods_count").children(":hidden").val(money);
+								}, "JSON")
+							}
+						
+						
+							function tianjiadiz() {
+								var postcode = $("#number_this").val();
+								var province = $("option[value='" + $("select[name='province']").val() + "']").text();
+								var city = $("option[value='" + $("select[name='city']").val() + "']").text();
+								var county = $("option[value='" + $("select[name='area']").val() + "']").text();
+								var detaileAddress = $("#address").val();
+								var name = $("#name_").val();
+								var phone = $("#phone").val();
+								$.post("DingDanServlet", "cz=adddizhi&phone=" + phone + "&postcode=" + postcode + "&city=" + city + "&county=" + county + "&detaileAddress=" + detaileAddress + "&name=" + name + "&province=" + province + "", function(data) {
+									if (parseInt(data) > 0) {
+										$.post("DingDanServlet", "cz=getaddress", function(data) {
+											var str = "";
+											for (var i = 0; i < data.length; i++) {
+												if (i == 0) {
+													str += "<input type='radio' aid='" + data[i].id + "' name='addre' checked='checked'>" + data[i].province + "  " + data[i].city + "  " + data[i].county + "" + data[i].detailedAddress + " (" + data[i].name + " 收) " + data[i].phone + "<br/>";
+												} else {
+													str += "<input type='radio' aid='" + data[i].id + "' name='addre'>" + data[i].province + "  " + data[i].city + "  " + data[i].county + "" + data[i].detailedAddress + " (" + data[i].name + " 收) " + data[i].phone + "<br/>";
+												}
+											}
+											$(".dizhi").html(str);
+											onclick_close();
+										}, "JSON")
+									}
+								})
+						
+							}
+						
+						
+							//获取路径中要查询的id	
+							function getUrlParam(name) {
+								var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+								var r = window.location.search.substr(1).match(reg);
+								if (r != null) return unescape(r[2]);
+								return null;
+							}
+							//点击提交事件
+							$("body").on("click", "#order_btn", function() {
+								var idSize = $(".goods_list_td");
+								var id = "";
+								for (var i = 1; i < idSize.size(); i++) {
+									id += "&id=" + $(".goods_list_td:eq(" + i + ")").attr("ordercode");
+								}
+								$.post("DingDanServlet", "cz=updaStatus&id=" + id, function(data) {
+									if (parseInt(data) > 0) {
+										//跳转扫码支付
+										location.href = "alipay.trade.page.pay.jsp?money=" + money + "&WIDbody=''";
+									} else {
+										alert("订单提交失败,根据订单号修改订单状态有异常");
+									}
+						
+								})
+							})
+						
+							//读取用户地址
+							$.post("DingDanServlet", "cz=getaddress", function(data) {
+								var str = "";
+								for (var i = 0; i < data.length; i++) {
+									str += "<input type='radio' aid='" + data[i].id + "' name='addre'>" + data[i].province + "  " + data[i].city + "  " + data[i].county + "" + data[i].detailedAddress + " (" + data[i].name + " 收) " + data[i].phone + "<br/>";
+								}
+								$(".dizhi").html(str);
+							}, "JSON")
+						
+							function onclick_close() {
+								$(".shade_content").hide();
+								$(".shade").hide();
+							}
+						</script>
+					</div>
+					<div class="col-xs-12">
+						<span class="span_style" id="">详细地址</span> <input
+							class="input_style" type="" name="xxdz" id="address" value=""
+							placeholder="&nbsp;&nbsp;请输入您的详细地址" />
+					</div>
+					<div class="col-xs-12">
+						<span class="span_style" id="">邮政编号</span> <input
+							class="input_style" type="" name="yzbm" id="number_this" value=""
+							placeholder="&nbsp;&nbsp;请输入您的邮政编号" />
+					</div>
+					<div class="col-xs-12">
+						<span class="span_style" class="span_sty" id="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+						<input class="input_style" type="" name="xm" id="name_" value=""
+							placeholder="&nbsp;&nbsp;请输入您的姓名" />
+					</div>
+					<div class="col-xs-12">
+						<span class="span_style" id="">手机号码</span> <input
+							class="input_style" type="" name="sjhm" id="phone" value=""
+							placeholder="&nbsp;&nbsp;请输入您的手机号码" />
+					</div>
+					<div class="col-xs-12">
+						<input class="btn_remove" type="button" id=""
+							onclick="javascript:onclick_close();" value="取消"
+							style="background:#60be74" /> <input type="button"
+							class="sub_set" onclick="javascript:tianjiadiz()" id="sub_setID"
+							value="提交" style="background:#60be74" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- JavaScript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.mobile-menu.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>

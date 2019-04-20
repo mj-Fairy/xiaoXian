@@ -1,0 +1,44 @@
+
+{
+    "status": 1,
+    "result": {
+        "totalMoney": 59,
+        "list": [
+            {
+                "productId": "24",
+                "productName": "橙子",
+                "productPrice": 9.5,
+                "productQuentity": "4",
+                "productImage": "product3.jpg",
+                "parts": "空"
+            },
+            {
+                "productId": "259",
+                "productName": "西兰花",
+                "productPrice": 56.0,
+                "productQuentity": "4",
+                "productImage": "product4.jpg",
+                "parts": "空"
+            },
+            {
+                "productId": "263",
+                "productName": "石榴",
+                "productPrice": 56.8,
+                "productQuentity": "2",
+                "productImage": "product12.jpg",
+                "parts": "空"
+            },
+            {
+                "productId": "262",
+                "productName": "樱桃",
+                "productPrice": 135.2,
+                "productQuentity": "1",
+                "productImage": "product11.jpg",
+                "parts": "空"
+            }
+        ]
+    }
+    ,
+	"message":""
+}
+

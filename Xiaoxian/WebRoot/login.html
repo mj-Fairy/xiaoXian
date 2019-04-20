@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta charset="UTF-8">
+<!-- Favicons Icon -->
+<title>小鲜超市</title>
+<!-- Mobile Specific -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
+<link rel="stylesheet" type="text/css" href="css/revslider.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="css/ac2ae5775c664fb682a6b10e460efad2.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/login.css" type="text/css" />
+<link rel="stylesheet" href="./css/normalize.css" type="text/css" />
+
+<!-- 这里有问题，一加进去那效果就不行 -->
+
+<!-- Google Fonts -->
+<link rel="icon" href="images/logoa3.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logoa3.png" type="image/x-icon"/>
+
+</head>
+<body class="shopping-cart-page">
+	<div id="page">
+		<!-- Header -->
+		<header>
+			<div class="header-container"></div>
+			<!-- End nav -->
+		</header>
+		<section class="main-container col1-layout">
+		<div class="logindiv">				
+		<div class="account-login">	
+			<div class="page-title">
+				<h2>欢迎登录</h2>
+			</div>		
+			<div class="register-wrap" id="register-wrap">
+			<div class="pic" id="pic">
+				<img src="./images/shuig.jpg" alt="该链接已失效"  width="440px" height="330px" />
+			</div>
+			<div class="register"id="register">
+				<div class="register-top" id="reg-top">
+					<h2 class="normal"id="normal">普通登录</h2>
+					<h2 class="nopassword"id="nopw">手机无密码登录</h2>
+					<a  id="qrcode"href=javascript:void(0)></a>	<!-- 扫码登录 -->
+				</div>
+
+				<!--普通登录-->
+				<div class="register-con" id="rc">
+					<form action="#" method="post">
+						<ul>
+							<li id="rc-inner-num">
+							<i></i>
+							<span>请输入昵称/手机号码</span>
+							</li>
+							<li id="rc-inner-virity">
+								<i></i>
+								<span>请输入密码</span>
+							</li>
+							<li id="rc-innerError"style="width:300px;
+								height:32px;
+								padding:0 6px;
+								color:#ff1877;
+								border:1px solid #ffd797;
+								display:none;">
+								<i style="display:inline-block;
+									float:left;
+									width:20px;
+									height:20px;
+									margin:6px 10px;
+									border:none;
+									background:url(./images/bz_16x16.png) no-repeat 0 0;"></i>
+								<span style="color:#ff1877;
+								display:inline-block;
+								float:left;
+								line-height:26px;">您输入的用户名或密码不正确</span>
+							</li>
+							<li class="form-group">
+								<input type="text"name="phone-num"class="form-control"placeholder="昵称/邮箱/手机号码"/>
+								<span class="fa fa-check success" style="display:none;color:green;position:relative;left:-25px;top:5px;"></span>
+								
+							</li>
+							<li class="form-group">
+								<input type="password"name="password"id="pass"class="form-control"placeholder="密码"/>
+								
+							</li>
+							<li class="read">
+								<input type="checkbox" class="ck" name="check"value="1"checked="checked"/>
+								<b>2周内自动登录</b>
+								<a href="#">忘记密码？</a>
+							</li>
+							<li>
+								<button class="submit"type="submit"id="login-btn"style="border-radius:5px;">立即登录</button>
+							</li>
+							<li>
+								<a href="#" class="haiwai">海外手机登录</a>
+								<a href="register.html"class="zhuce">新用户注册</a>
+							</li>
+							<li class="zjdl">
+								无需注册即可登录：
+							</li>
+							<li>
+								<div class="qq"style="border-radius:5px;"></div>
+								<div class="weixin"style="border-radius:5px;"></div>
+								<div class="weibo"style="border-radius:5px;"></div>
+							</li>
+						</ul>
+					</form>	
+				</div>
+				<!--手机无密码登录-->
+				<div class="login-con" id="lc">
+					<form action="#">
+					<ul>
+						<li id="inner-num">
+							<i></i>
+							<span>请输入手机号码</span>
+						</li>
+						<li id="inner-virity">
+							<i></i>
+							<span>请输入验证码</span>
+						</li>
+						<li class="lg-num  form-group">
+							<select name="country" id="country"class="info-select"style="border-radius:5px;">
+								<option value="中国">中国</option>
+							</select>
+							<input type="text"name="phone-num"class="form-control"placeholder="手机号码"/>	
+							<span class="fa fa-check success" style="display:none;color:green;position:relative;left:-25px;top:5px;"></span>
+						</li>
+						<li class="password form-group">
+							<input type="password"name="password"id="pass1"class="form-control"placeholder="动态密码"/>
+							
+						</li>
+						<li>
+							<button class="getcode"id="getcode"style="border-radius:5px;">获取手机动态密码</button>
+						</li>
+						<li class="read">
+							<input type="checkbox" class="ck" name="check"value="1"checked="checked"/>
+							<b>2周内自动登录</b>
+							<a href="#">忘记密码？</a>
+						</li>
+						
+						<li>
+							<button class="submit"type="submit"id="login-btn1"style="border-radius:5px;">登录</button>
+						</li>
+						<li>
+							<a href="#" class="haiwai">海外手机登录</a>
+							<a href="register.html" class="zhuce">新用户注册</a>
+						</li>
+						<li class="zjdl">
+							无需注册即可登录：
+						</li>
+						<li>
+							<div class="qq"style="border-radius:5px;"></div>
+							<div class="weixin"style="border-radius:5px;"></div>
+							<div class="weibo"style="border-radius:5px;"></div>
+						</li>
+					</ul>
+				</form>	
+				</div>
+				<!-- 扫码登录 -->
+				<div class="saoma" id="sm">
+					<div class="screen-tu"id="screen"></div>
+					<div class="saoyisao"><h2>手机扫码,安全登录</h2></div>
+					<div class="qr-code">
+						<img src="" alt="" width="139" height="139">
+					</div>
+					<div class="link">
+						<img src="images/saoma.png" alt="" width="26" height="26">
+						 <i>扫一扫登录</i>				
+					</div>
+					<div class="dlzc"><a href="#">密码登录</a><a href="#">免费注册</a></div>
+				</div>
+			</div>
+		</div>	
+		</div>
+		</div>
+		</section>
+		<!-- Brand Logo Section -->
+		<div class="brand-logo">
+			<div class="container">
+				<div class="slider-items-products">
+					<div id="brand-logo-slider"
+						class="product-flexslider hidden-buttons">
+						<div class="slider-items slider-width-col6">
+							<div class="item">
+								<a href="#"><img src="picture/b-logo3.png" alt="Brand Logo"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo1.png" alt="Brand Logo1"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo2"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo3"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo5.png" alt="Brand Logo4"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo6.png" alt="Brand Logo5"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo6"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo7"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Brand Logo Section -->
+		<!-- Footer -->
+		<footer>
+			<div class="footer-page"></div>
+		</footer>
+		<!-- End Footer -->
+	</div>
+	<!-- End page -->
+	<!-- mobile menu -->
+	
+	<!-- JavaScript -->
+	<script src="js/jquery.min.js"></script>
+		<script>
+		$(document).ready(function() {
+			$(".header-container").load("header.html");
+			$(".footer-page").load("footer.html");		
+		})
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.mobile-menu.min.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

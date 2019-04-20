@@ -1,0 +1,184 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Favicons Icon -->
+<title>小鲜超市e</title>
+<!-- Mobile Specific -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
+<link rel="stylesheet" type="text/css" href="css/revslider.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Google Fonts -->
+<link href="css/ac2ae5775c664fb682a6b10e460efad2.css" rel="stylesheet">
+<link rel="icon" href="images/logoa3.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logoa3.png" type="image/x-icon" />
+
+</head>
+<body class="dashboard-page">
+	<div id="page">
+		<!-- Header -->
+		<header>
+			<div class="header-container"></div>
+		</header>
+		<!-- main-container -->
+		<div class="main-container col2-right-layout">
+			<div class="main container">
+				<div class="row">
+					<section class="col-sm-9 col-xs-12" style="width: 100%">
+						<div class="col-main">
+							<div class="dashboard">
+								<div class="welcome-msg">
+									<strong>你好，John Doe！</strong>
+								</div>
+								<div class="recent-orders">
+									<div class="title-buttons">
+										<strong>最近的订单</strong><a href="#">查看全部</a>
+									</div>
+									<div class="table-responsive">
+										<table class="data-table" id="my-orders-table">
+											<thead>
+												<tr class="first last">
+													<th>订单 ＃</th>
+													<th>日期</th>
+													<th>运送到</th>
+													<th><span class="nobr">合计订单</span></th>
+													<th>状态</th>
+													<th>&nbsp;</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="first odd">
+													<td>500000002</td>
+													<td>9/9/10</td>
+													<td>John Doe</td>
+													<td><span class="price">$5.00</span></td>
+													<td><em>待定</em></td>
+													<td class="a-center last"><span class="nobr"><a
+															href="#">查看订单</a><span class="separator">|</span><a
+															href="#">再订购</a></span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<!--End main-container -->
+		<!-- Brand Logo Section -->
+		<div class="brand-logo">
+			<div class="container">
+				<div class="slider-items-products">
+					<div id="brand-logo-slider"
+						class="product-flexslider hidden-buttons">
+						<div class="slider-items slider-width-col6">
+							<div class="item">
+								<a href="#"><img src="picture/b-logo3.png" alt="Brand Logo"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo1.png" alt="Brand Logo1"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo2"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo3"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo5.png" alt="Brand Logo4"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo6.png" alt="Brand Logo5"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo2.png" alt="Brand Logo6"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="picture/b-logo4.png" alt="Brand Logo7"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Brand Logo Section -->
+		<!-- Footer -->
+		<footer>
+			<div class="footer-page"></div>
+		</footer>
+		<!-- End Footer -->
+	</div>
+	<!-- End page -->
+	<!-- mobile menu -->
+	
+	<!-- JavaScript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.mobile-menu.min.js"></script>
+	<script src="js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".header-container").load("header.html");
+			$(".footer-page").load("footer.html");
+		
+			$('body').on("click",".remo",function(){
+				$.post("removeOrder","oid="+$(this).attr("oid"),removeOut,"text");
+				function removeOut(data){
+					$.post("cheAdderss", checkAddOut, "json");
+					}
+			});
+			$.post("cheAdderss", checkAddOut, "json");
+			var add;
+			var pro;
+			function checkAddOut(data1) {
+				add = data1;
+				$.post("GetAllProServlet", checkPro, "json");
+			}
+			function checkPro(data2) {
+				pro = data2;
+				$.post("cheOrder", checkout, "json");
+			}
+			function checkout(data) {
+				$("#my-orders-table>tbody>tr").remove();
+				for (var i = 0; i < data.length; i++) {
+					var name;
+					var price = 0;
+					var address;
+					var pid;
+					var imgUrl;
+					for (var a = 0; a < add.length; a++) {
+						if (add[a].id == data[i].aid) {
+							name = add[a].name;
+							address = add[a].province + add[a].city + add[a].county + add[a].detailedAddress;
+							break;
+						}
+					}
+					for (var b = 0; b < pro.length; b++) {
+						if (pro[b].id == data[i].pid) {
+							price = (parseInt(data[i].number) * parseFloat(pro[b].promotePrice)).toFixed(2);
+							pid = pro[b].id;
+							imgUrl = pro[b].imgUrl;
+							break;
+						}
+					}
+					$("#my-orders-table>tbody").append("<tr class='first odd'><td>" + data[i].orderCode + "</td><td>" + data[i].createDate + "</td><td>" + address + "</td><td><span class='price'>" + price + "</span></td><td><em>" + "已付款" + "</em></td><td class='a-center last'><span class='nobr'><a href='product_detail.html?id="+pid+"&imgUrl="+imgUrl+"'>再来一单</a><span class='separator'>|</span><a class='remo' oid = "+data[i].id+">删除</a></span></td></tr>");
+				}
+			}
+	
+		})
+	</script>
+</body>
+</html>
